@@ -3,18 +3,18 @@
 #dir:General
 #description:Make shapers graphs
 
-if [[ ! -f /tmp/calibration_data_x*.csv ]] ; then
+if [ ! -f /tmp/calibration_data_x*.csv ] ; then
     echo 'File "/tmp/calibration_data_x*.csv" does not exist, aborting.'
     exit
 fi
 
-if [[ ! -f /tmp/calibration_data_y*.csv ]] ; then
+if [ ! -f /tmp/calibration_data_y*.csv ] ; then
     echo 'File "/tmp/calibration_data_y*.csv" does not exist, aborting.'
     exit
 fi
 
-/home/mks/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_y*.csv -o /home/mks/fluidd/img/shaper_calibrate_y.png > /home/mks/fluidd/img/recomends_y.txt
-/home/mks/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_x*.csv -o /home/mks/fluidd/img/shaper_calibrate_x.png > /home/mks/fluidd/img/recomends_x.txt
+sudo sh -c "python3 /home/mks/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_y*.csv -o /home/mks/fluidd/img/shaper_calibrate_y.png > /home/mks/fluidd/img/recomends_y.txt"
+sudo sh -c "python3 /home/mks/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_x*.csv -o /home/mks/fluidd/img/shaper_calibrate_x.png > /home/mks/fluidd/img/recomends_x.txt"
 rec1=$(cat /home/mks/fluidd/img/recomends_x.txt)
 rec2=$(cat /home/mks/fluidd/img/recomends_y.txt)
 recomendsx="${rec1//$'\n'/<br />}";
