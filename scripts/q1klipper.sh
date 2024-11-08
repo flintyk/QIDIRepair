@@ -2,8 +2,8 @@
 #name:Reinstall Klipper
 #dir:Q1 Pro
 #description:Reinstall Klipper from github
-sudo systemctl stop klipper
-cd /home/mks/&&sudo rm -rf klipper&&git clone https://github.com/QIDITECH/klipper.git
-sudo systemctl start klipper
+sudo sh -c "systemctl stop klipper"
+cd /home/mks/&&sudo sh -c "rm -rf klipper"&&git clone https://github.com/flintyk/klipper.git
+sudo sh -c "systemctl start klipper"
 
 exit 0
