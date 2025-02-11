@@ -1,5 +1,5 @@
 #!/bin/bash
-#name:v4.1.15
+#name:v4.3.15
 #dir:X-Max 3/Update
 #description:Update v4.3.15
 sudo sh -c 'wget "https://www.qidi-russia.ru/3series/updates/max/4.3.15/mks.deb" -O /tmp/mks.deb'
